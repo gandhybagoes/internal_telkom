@@ -32,8 +32,6 @@ class Grab extends CI_Controller
 			$keyword = str_replace(" ", "+", $area[$x]['area']);
 			$url = "http://www.firstmedia.com/ajax/address?keyword=$keyword";
 			$kodeHTML =  $this->bacaHtml("$url");
-			/*echo $kodeHTML;
-			die();*/
 			$js = json_decode($kodeHTML, true);
 			$status = $js['status'];
 			$buildings = $js['buildings'];
@@ -341,9 +339,6 @@ class Grab extends CI_Controller
 
 	public function myrep_sub($table)
 	{
-		//& = %26
-		//spasi = +
-		//error_reporting(0);
 		$table2 = "";
 		if ($table == "malang" || $table == "Malang" || $table == "MALANG") {
 			$table = "myrep_malang";
